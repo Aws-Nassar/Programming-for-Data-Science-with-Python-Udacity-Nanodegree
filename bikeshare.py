@@ -173,6 +173,8 @@ def main():
         if restart != 'yes':
             print("Thank you for using the bikeshare analysis tool. Goodbye!")
             break
+    
+    print("Analysis complete! Check the stats above.")
 
 
 if __name__ == "__main__":
