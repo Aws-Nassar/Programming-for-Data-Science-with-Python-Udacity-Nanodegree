@@ -136,6 +136,8 @@ def display_user_stats(data):
         gender_counts = data['Gender'].value_counts()
         print("\nCounts by Gender:")
         print(gender_counts)
+    else:
+        print("\nNote: Gender data is not available for the selected city.")  # <-- NEW LINE
 
     if 'Birth Year' in data.columns:
         earliest_birth = data['Birth Year'].min()
@@ -145,6 +147,8 @@ def display_user_stats(data):
         print(f"Earliest Year: {earliest_birth}")
         print(f"Most Recent Year: {most_recent_birth}")
         print(f"Most Common Year: {most_common_birth}")
+    else:
+        print("\nNote: Birth year data is not available for the selected city.")  # <-- NEW LINE
     print("=" * 50)
 
 
