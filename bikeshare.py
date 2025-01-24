@@ -111,11 +111,16 @@ def display_trip_duration_stats(data):
     """Displays statistics on trip durations."""
     print("\n--- Trip Duration Statistics ---\n")
     
-    total_duration = data['Trip Duration'].sum()
-    print(f"Total Trip Duration: {total_duration}")
+    total_seconds = data['Trip Duration'].sum()
+    hours = total_seconds // 3600
+    minutes = (total_seconds % 3600) // 60
+    seconds = total_seconds % 60
+    print(f"Total Trip Duration: {int(hours)}h {int(minutes)}m {int(seconds)}s")
 
-    mean_duration = data['Trip Duration'].mean()
-    print(f"Mean Trip Duration: {mean_duration}")
+    mean_seconds = data['Trip Duration'].mean()
+    mean_min = int(mean_seconds // 60)
+    mean_sec = int(mean_seconds % 60)
+    print(f"Mean Trip Duration: {mean_min}m {mean_sec}s")
     print("=" * 50)
 
 
